@@ -1,88 +1,109 @@
-// Theme Toggle Logic
-const themeToggle = document.getElementById('theme-toggle');
-const html = document.documentElement;
-const themeIcon = themeToggle.querySelector('i');
+/**
+ * AHMED MOSTAFA PORTFOLIO
+ * Senior Logic & Animation Script
+ */
 
-themeToggle.addEventListener('click', () => {
-    const isDark = html.getAttribute('data-theme') === 'dark';
-    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-    themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
-});
+document.addEventListener('DOMContentLoaded', () => {
 
-// Scroll Reveal Animation
-const revealElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right');
+    // 1. Theme Toggle
+    const themeBtn = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    const themeIcon = themeBtn.querySelector('i');
 
-const observerOptions = {
-    threshold: 0.15,
-    rootMargin: "0px 0px -50px 0px"
-};
+    const toggleTheme = () => {
+        const isDark = html.getAttribute('data-theme') === 'dark';
+        const nextTheme = isDark ? 'light' : 'dark';
+        html.setAttribute('data-theme', nextTheme);
+        themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+        localStorage.setItem('theme', nextTheme);
+    };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('reveal-active');
-        }
-    });
-}, observerOptions);
-
-revealElements.forEach(el => observer.observe(el));
-
-// Form Handling & Validation
-const contactForm = document.getElementById('contact-form');
-const statusMsg = document.getElementById('form-status');
-
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    // Basic Validation
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-
-    if (name.length < 2 || !email.includes('@')) {
-        statusMsg.style.color = "#ff4d4d";
-        statusMsg.innerText = "Please fill in all fields correctly.";
-        return;
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        html.setAttribute('data-theme', savedTheme);
+        themeIcon.className = savedTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
     }
 
-    // Success Simulation (since Formspree needs a real ID)
-    statusMsg.style.color = "var(--accent-color)";
-    statusMsg.innerText = "Sending...";
+    themeBtn.addEventListener('click', toggleTheme);
 
-    // This simulates the submission process
-    setTimeout(() => {
-        statusMsg.innerText = "Message sent successfully!";
-        contactForm.reset();
-        
-        // Clear message after 3 seconds
-        setTimeout(() => {
-            statusMsg.innerText = "";
-        }, 3000);
-    }, 1500);
+    // 2. Mobile Menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    const bars = document.querySelectorAll('.bar');
 
-    /* Uncomment this for real Formspree usage:
-    const data = new FormData(e.target);
-    fetch(e.target.action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-    }).then(response => {
-        if (response.ok) {
-            statusMsg.innerText = "Message sent successfully!";
-            contactForm.reset();
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+        // Animate hamburger
+        if (navLinks.classList.contains('open')) {
+            bars[0].style.transform = 'rotate(45deg) translate(5px, 6px)';
+            bars[1].style.opacity = '0';
+            bars[2].style.transform = 'rotate(-45deg) translate(5px, -6px)';
+        } else {
+            bars.forEach(bar => bar.style.transform = 'none');
+            bars[1].style.opacity = '1';
         }
     });
-    */
-});
 
-// Navbar Scroll Effect
-window.addEventListener('scroll', () => {
-    const nav = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        nav.style.padding = "15px 5%";
-        nav.style.boxShadow = "0 10px 30px rgba(0,0,0,0.3)";
-    } else {
-        nav.style.padding = "20px 5%";
-        nav.style.boxShadow = "none";
+    // Close menu on link click
+    document.querySelectorAll('.nav-item').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            bars.forEach(bar => bar.style.transform = 'none');
+            bars[1].style.opacity = '1';
+        });
+    });
+
+    // 3. Scroll Reveal Observer
+    const revealItems = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right');
+    
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    revealItems.forEach(item => revealObserver.observe(item));
+
+    // 4. Scroll To Top Button
+    const scrollTopBtn = document.getElementById('scroll-top');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            scrollTopBtn.classList.add('visible');
+        } else {
+            scrollTopBtn.classList.remove('visible');
+        }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // 5. Form Handling (Simulation)
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const submitBtn = contactForm.querySelector('button');
+            const originalText = submitBtn.innerHTML;
+
+            submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
+            submitBtn.style.opacity = '0.7';
+
+            setTimeout(() => {
+                submitBtn.innerHTML = 'Message Sent! <i class="fas fa-check"></i>';
+                submitBtn.style.backgroundColor = '#16a34a';
+                contactForm.reset();
+
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.opacity = '1';
+                    submitBtn.style.backgroundColor = '';
+                }, 3000);
+            }, 1500);
+        });
     }
 });
