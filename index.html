@@ -3,159 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahmed Mostafa | Call Center Specialist</title>
+    <title>Ahmed Mostafa | Communication Specialist</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="1776375513577.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="blob-container">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
+    <div class="blob-wrapper">
+        <div class="blob"></div>
     </div>
 
     <nav class="navbar">
-        <div class="logo">AHMED <span>M.</span></div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="theme-toggle" id="theme-toggle">
-            <i class="fas fa-moon"></i>
+        <div class="container nav-container">
+            <a href="#" class="logo">AH<span>M</span>ED</a>
+                        
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="nav-item">Home</a></li>
+                <li><a href="#about" class="nav-item">About</a></li>
+                <li><a href="#skills" class="nav-item">Skills</a></li>
+                <li><a href="#experience" class="nav-item">Experience</a></li>
+                <li><a href="#contact" class="nav-item">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="hamburger" id="menu-toggle" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <section id="home" class="hero section">
-        <div class="container split-layout">
-            <div class="hero-content reveal-left">
-                <span class="badge">Professional Portfolio</span>
-                <h1>Ahmed <span class="gradient-text">Mostafa</span></h1>
-                <h3>Call Center Specialist</h3>
-                <p class="tagline">Bridging the gap between brands and customers with exceptional communication and empathetic support.</p>
-                <a href="#contact" class="btn primary-btn">Let's Connect</a>
-            </div>
-            <div class="hero-visual reveal-right">
-                <div class="image-frame">
-                    <img src="1776375513577.png" alt="Ahmed Mostafa">
-                    <div class="glow-border"></div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <button id="scroll-top" class="scroll-btn" aria-label="Scroll to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-    <section id="about" class="section">
-        <div class="container">
-            <div class="glass-card about-card reveal-up">
-                <h2 class="section-title">About Me</h2>
-                <p>Highly experienced Call Center Specialist with a proven track record of handling high-volume interactions across telecommunications and service sectors. Expert in conflict resolution, billing support, and maintaining top-tier customer satisfaction ratings through active listening and professional diplomacy.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="section">
-        <div class="container">
-            <h2 class="section-title reveal-up">Core Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-card reveal-up">
-                    <i class="fas fa-headset"></i>
-                    <h4>Customer Support</h4>
-                    <p>Expertly managing inbound/outbound calls with a focus on first-call resolution.</p>
-                </div>
-                <div class="skill-card reveal-up">
-                    <i class="fas fa-comments"></i>
-                    <h4>Verbal Clarity</h4>
-                    <p>Articulate communication in both English and Arabic to ensure customer understanding.</p>
-                </div>
-                <div class="skill-card reveal-up">
-                    <i class="fas fa-shield-halved"></i>
-                    <h4>Conflict Resolution</h4>
-                    <p>De-escalating tense situations with professional empathy and problem-solving skills.</p>
-                </div>
-                <div class="skill-card reveal-up">
-                    <i class="fas fa-clock"></i>
-                    <h4>AHT Management</h4>
-                    <p>Optimizing Average Handling Time without compromising service quality.</p>
-                </div>
-                <div class="skill-card reveal-up">
-                    <i class="fas fa-database"></i>
-                    <h4>CRM Mastery</h4>
-                    <p>Proficient in logging data and navigating complex CRM systems like Salesforce.</p>
-                </div>
-                <div class="skill-card reveal-up">
-                    <i class="fas fa-award"></i>
-                    <h4>Quality Assurance</h4>
-                    <p>Consistently meeting and exceeding KPIs and service level agreements (SLAs).</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience" class="section">
-        <div class="container">
-            <h2 class="section-title reveal-up">Professional Journey</h2>
-            <div class="experience-list">
-                <div class="exp-card reveal-left">
-                    <div class="exp-header">
-                        <span class="company">Intouch</span>
-                        <span class="date-badge">Present</span>
+    <main>
+        <section id="home" class="hero section">
+            <div class="container hero-grid">
+                <div class="hero-text reveal-left">
+                    <div class="badge">
+                        <div class="pulse"></div>
+                        <span>Available for Support Roles</span>
                     </div>
-                    <h4>Call Center Representative</h4>
-                    <p>Providing premium representative services, managing complex account inquiries and service delivery.</p>
-                </div>
-                <div class="exp-card reveal-right">
-                    <div class="exp-header">
-                        <span class="company">Etisalat (Smiles Program)</span>
-                        <span class="date-badge">Previous</span>
+                    <h1>Exceptional <span class="text-green">Voice</span> for Your Brand.</h1>
+                    <p>I bridge the gap between complex problems and happy customers with professional communication and elite conflict resolution skills.</p>
+                    <div class="hero-btns">
+                        <a href="#contact" class="btn btn-primary">Start Talking <i class="fas fa-headset"></i></a>
+                        <div class="wave-container">
+                            <span></span><span></span><span></span><span></span>
+                        </div>
                     </div>
-                    <h4>Call Center Agent</h4>
-                    <p>Managed loyalty program inquiries, resolved technical billing issues, and improved customer retention.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title reveal-up">Get In Touch</h2>
-            <div class="contact-split">
-                <div class="social-side reveal-left">
-                    <a href="https://www.facebook.com/ahmed.jenkiz.10/" class="social-large fb" title="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                        <span>Facebook</span>
-                    </a>
-                    <a href="https://wa.me/+201007205188" class="social-large wa" title="WhatsApp">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>WhatsApp</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/ahmed-jenkiz-5941a1204/" class="social-large li" title="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                        <span>LinkedIn</span>
-                    </a>
                 </div>
 
-                <div class="form-side reveal-right">
-                    <form id="contact-form" action="https://formspree.io/f/mjgjyjvr" method="POST" class="glass-card">
-                        <div class="input-group">
-                            <input type="text" name="name" id="name" placeholder="Full Name" required>
+                <div class="hero-visual reveal-right">
+                    <div class="headset-frame">
+                        <div class="frame-glow"></div>
+                        <div class="inner-img">
+                            <img src="1776375513577.png" alt="Ahmed Mostafa">
                         </div>
-                        <div class="input-group">
-                            <input type="email" name="email" id="email" placeholder="Email Address" required>
-                        </div>
-                        <div class="input-group">
-                            <textarea name="message" id="message" rows="5" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn primary-btn full-btn">Send Message</button>
-                        <p id="form-status"></p>
-                    </form>
+                        <div class="earpiece-l"></div>
+                        <div class="earpiece-r"></div>
+                        <div class="mic-arm"></div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section id="about" class="section bg-alt">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <p class="sub-title">Expertise</p>
+                    <h2>The Specialist</h2>
+                </div>
+                <div class="card glass reveal-up">
+                    <p>Professional Call Center Specialist with a focus on high-tier customer support and satisfaction. I don't just solve tickets; I build brand loyalty through empathy and clear communication.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <p class="sub-title">Powerups</p>
+                    <h2>Core Competencies</h2>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card glass reveal-up">
+                        <i class="fas fa-microphone"></i>
+                        <h3>Communication</h3>
+                        <p>Crystal clear verbal and written correspondence in English and Arabic.</p>
+                    </div>
+                    <div class="skill-card glass reveal-up">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Problem Solving</h3>
+                        <p>Resolving complex billing and technical issues in record time.</p>
+                    </div>
+                    <div class="skill-card glass reveal-up">
+                        <i class="fas fa-shield-heart"></i>
+                        <h3>De-escalation</h3>
+                        <p>Calmly managing high-pressure situations and frustrated customers.</p>
+                    </div>
+                    <div class="skill-card glass reveal-up">
+                        <i class="fas fa-keyboard"></i>
+                        <h3>Technical Proficiency</h3>
+                        <p>Expertise in CRM software, ticketing systems, and fast typing (65+ WPM).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section bg-alt">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <p class="sub-title">Journey</p>
+                    <h2>Professional History</h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item reveal-left">
+                        <div class="timeline-content glass">
+                            <span class="year">2024 - Present</span>
+                            <h3>Senior Representative</h3>
+                            <p class="company">Intouch</p>
+                            <p>Handling top-tier accounts and ensuring service level agreements (SLA) are met daily.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal-right">
+                        <div class="timeline-content glass">
+                            <span class="year">2022 - 2023</span>
+                            <h3>Customer Support Agent</h3>
+                            <p class="company">Etisalat (Smiles)</p>
+                            <p>Managed loyalty program inquiries and technical troubleshooting for mobile users.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info reveal-left">
+                        <h2>Let's Connect</h2>
+                        <p>Looking for a dedicated communication expert? Send a message.</p>
+                        <div class="social-links">
+                            <a href="https://wa.me/+201007205188" target="_blank" aria-label="WhatsApp" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://www.linkedin.com/in/ahmed-jenkiz-5941a1204/" target="_blank" aria-label="LinkedIn" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://www.facebook.com/ahmed.jenkiz.10/" target="_blank" aria-label="Facebook" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                    <div class="contact-form-container reveal-right">
+                        <form id="contact-form" class="glass">
+                            <div class="input-group">
+                                <input type="text" placeholder="Full Name" required>
+                            </div>
+                            <div class="input-group">
+                                <input type="email" placeholder="Email Address" required>
+                            </div>
+                            <div class="input-group">
+                                <textarea rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary full-width">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
 
     <script src="main.js"></script>
 </body>
